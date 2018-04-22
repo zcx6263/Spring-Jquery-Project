@@ -44,15 +44,30 @@
 					id="evalRuleTable" class="tablesorter">
 					<thead>
 						<tr>
-							<th style="font-size: 1.5rem">상품번호</th>
-							<th style="font-size: 1.5rem">상품이름</th>
-							<th style="font-size: 1.5rem">날짜</th>
-							<th style="font-size: 1.5rem">점수</th>
-							<th style="font-size: 1.5rem">코멘트</th>
+							<th style="font-size: 1.5rem">상품 ID</th>
+							<th style="font-size: 1.5rem">상품 타입</th>
+							<th style="font-size: 1.5rem">상품 이름</th>
+							<th style="font-size: 1.5rem">설명</th>
+							<th style="font-size: 1.5rem">가격</th>
+							<th style="font-size: 1.5rem">수량</th>
+							<th style="font-size: 1.5rem">장바구니</th>
 						</tr>
 					</thead>
 					<tbody>
-						
+						<c:forEach items="${productList}" var="product">
+							<tr>
+								<td>${product.id}</td>
+								<td>${product.type}</td>
+								<td>${product.name}</td>
+								<td>${product.explanation}</td>
+								<td>${product.price}</td>
+								<td>${product.inventory}</td>
+								<td>
+								<input type="text" placeholder="수량 입력" autofocus required>
+								<input type="button" value="담기">
+								</td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 
