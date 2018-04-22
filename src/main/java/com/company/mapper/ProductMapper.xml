@@ -9,6 +9,8 @@
 		SELECT id ,type ,name ,explanation ,price, inventory FROM product
 	</select>
 	
-	
+	<select id="viewProduct" parameterType="String" resultType="ProductVO">
+		SELECT id ,type ,name ,explanation ,price, inventory FROM product WHERE id = #{id}
+	</select>
 	
 </mapper>

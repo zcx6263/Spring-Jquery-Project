@@ -46,7 +46,7 @@
 						<tr>
 							<th style="font-size: 1.5rem">상품 ID</th>
 							<th style="font-size: 1.5rem">상품 타입</th>
-							<th style="font-size: 1.5rem">상품 이름</th>
+							<th style="font-size: 1.5rem">상품명</th>
 							<th style="font-size: 1.5rem">설명</th>
 							<th style="font-size: 1.5rem">가격</th>
 							<th style="font-size: 1.5rem">수량</th>
@@ -56,7 +56,7 @@
 					<tbody>
 						<c:forEach items="${productList}" var="product">
 							<tr>
-								<td>${product.id}</td>
+								<td><a href = "product_view?id=${product.id}">${product.id}</a></td>
 								<td>${product.type}</td>
 								<td>${product.name}</td>
 								<td>${product.explanation}</td>

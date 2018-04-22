@@ -20,6 +20,12 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 		return mapper.selectProduct();
 	}
+
+	@Override
+	public ProductVO viewProduct(String id) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.viewProduct(id);
+	}
 	
 	
 }

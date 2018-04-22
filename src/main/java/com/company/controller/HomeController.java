@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.company.dto.MemberVO;
 import com.company.dto.ProductVO;
@@ -28,18 +29,27 @@ public class HomeController {
 	private ProductService productService;
 	
 	/**
-	 *  home page 로 이동
+	 *  home page 로 이동 (상품 목록 Page)
 	 */
 	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) throws Exception{
 
 		logger.info("HomePage");
-		
 		List<ProductVO> productList = productService.selectProduct();
-		
 		model.addAttribute("productList", productList);
-		
 		return "home";
+	}
+	
+	/**
+	 * 상품 세부사항 보기
+	 */
+	@RequestMapping(value="product_view")
+	public String product_view(@RequestParam String id, Model model) throws Exception
+	{
+		logger.info("product_view: "+ id);
+		
+		model.addAttribute("product", productService.viewProduct(id));
+		return "product";
 	}
 
 }
