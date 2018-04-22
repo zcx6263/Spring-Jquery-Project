@@ -1,44 +1,32 @@
 package com.company.dto;
-/**
- * 평가 테이블을 관리하기 위한 DTO
- */
-public class MemberVO {
+import java.io.Serializable;
 
-	private String patientNum; // 환자 번호
-	private String patientName; // 환자 이름
-	private String comment;
-	private String date;
-	private int score;
-	public String getPatientNum() {
-		return patientNum;
-	}
-	public void setPatientNum(String patientNum) {
-		this.patientNum = patientNum;
-	}
-	public String getPatientName() {
-		return patientName;
-	}
-	public void setPatientName(String patientName) {
-		this.patientName = patientName;
-	}
-	public String getComment() {
-		return comment;
-	}
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
+/**
+ * 자바 직렬화란 자바 시스템 내부에서 사용되는 객체 또는 데이터를 외부의 자바 시스템에서도
+ * 사용할 수 있도록 바이트 형태로 변환하는 기술과 바이트로 변환된 데이터를 다시 객체로 변환(역직렬화)
+ * 세션에 추가되는 모든 attribute들은 Serializable 인터페이스를 구현해야함
+ */
+public class MemberVO implements Serializable{
+	private String userId;
+	private String userPw;
 	
-	public int getScore() {
-		return score;
+	private boolean useCookie; // 자동로그인 체크박스를 체크했을때
+	public String getUserId() {
+		return userId;
 	}
-	public void setScore(int score) {
-		this.score = score;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
-	public String getDate() {
-		return date;
+	public String getUserPw() {
+		return userPw;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setUserPw(String userPw) {
+		this.userPw = userPw;
 	}
-	
+	public boolean isUseCookie() {
+        return useCookie;
+    }
+    public void setUseCookie(boolean useCookie) {
+        this.useCookie = useCookie;
+    }
 }

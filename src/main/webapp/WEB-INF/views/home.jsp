@@ -17,6 +17,7 @@
 <title>Payment System</title>
 </head>
 <body>
+<div class="ui_container">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<div class="collapse navbar-collapse" id="navbarsExample09">
 		<ul class="navbar-nav nav nav-tabs mr-auto" role="tablist">
@@ -31,12 +32,48 @@
 			<form class="navbar-form pull-left">
 				<input class="form-control" type="text" name="pName"
 					id="searchPatient" placeholder="상품이름" aria-label="상품이름">
-				<button type="button" class="btn btn-primary" id="searchButton">검색</button>
-				<button type="button" class="btn btn-danger" id="clickedLogout">LogOut</button>
+				<button type="button" class="btn btn-primary">검색</button>
+				<button type="button" class="btn btn-danger">LogOut</button>
 			</form>
 		</form>
 	</div>
 	</nav>
+	<div class="tab-content">
+			<div class="tab-pane active" id="tab2">
+				<table width="880" cellpadding="0" cellspacing="0" border="1"
+					id="evalRuleTable" class="tablesorter">
+					<thead>
+						<tr>
+							<th style="font-size: 1.5rem">상품번호</th>
+							<th style="font-size: 1.5rem">상품이름</th>
+							<th style="font-size: 1.5rem">날짜</th>
+							<th style="font-size: 1.5rem">점수</th>
+							<th style="font-size: 1.5rem">코멘트</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+
+				<br /> <br />
+
+				<ul class="nav justify-content-center">
+					<form class="form-inline" id="search">
+						<input type="number"
+							style="font-size: 25px; width: 150px; text-align: center;"
+							placeholder="최소점수" min="1" max="5">
+						<h1>&nbsp;~&nbsp;</h1>
+						<input type="number"
+							style="font-size: 25px; width: 150px; text-align: center;"
+							placeholder="최대점수" min="1" max="5">
+							
+						<button type="button" class="btn btn-secondary">검색</button>
+					</form>
+				</ul>
+			</div>
+		</div>
+</div>
 
 
 
