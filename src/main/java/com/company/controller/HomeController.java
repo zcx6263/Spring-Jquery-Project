@@ -14,44 +14,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class HomeController {
-	
 
-	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
-	 * 처음 home page 로 이동
+	 *  home page 로 이동
 	 */
 	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) throws Exception{
 
-		logger.info("defaultPage");
+		logger.info("HomePage");
 
 		return "home";
 	}
-	/**
-	 * Home 에서 의사유저 버튼 클릭시 페이지 이동
-	 */
-	@RequestMapping(value = "docPageButton",  method = RequestMethod.GET)
-	public String docPageButton() throws Exception{
-
-		logger.info("docPage Button clicked");
-		return "login";
-	}
-	/**
-	 * Home 에서 일반사용자 버튼 클릭시 페이지 이동
-	 */
-	@RequestMapping(value = "generalUserButton",  method = RequestMethod.GET)
-	public String generalUserButton() throws Exception{
-
-		logger.info("generalSurvey Button clicked");
-		return "generalSurvey";
-	}
-
-
-
-
-
-
-	
 }
